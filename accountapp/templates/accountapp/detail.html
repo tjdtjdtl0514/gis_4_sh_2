@@ -13,10 +13,10 @@
                     {{ target_user.profile.nickname }}
                         {% if target_user == user %}
                             <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}"
-                            class='material-icons round_button'>
+                                class="material-icons round_button">
                                 edit
                             </a>
-                        {% endif %}
+                         {% endif %}
                 </h2>
                 <h5>{{ target_user.profile.message }}</h5>
             {% else %}
@@ -25,8 +25,9 @@
                     Create Profile
                 </a>
             </h4>
-            {% endif %}
+            {%  endif %}
         </div>
+
 
         {% if user == target_user %}
 
@@ -40,7 +41,12 @@
                 close
             </a>
         </div>
+
         {% endif %}
+    </div>
+
+    <div>
+        {% include 'snippets/list_fragment.html' with article_list=object_list %}
     </div>
 
 
